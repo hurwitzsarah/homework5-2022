@@ -25,12 +25,123 @@ header {
     flex-direction: column;
 }
 
-a:link {
-    color: blue;
-  }
-  
-
 a:visited {
-    color: blue;
+    color: #00ff;
   }
-  
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45adad;
+    padding: 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-basis: 450px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.gallery img {
+    border: 10px solid #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+@media screen and (min-width: 900px){
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .pricing, .card {
+        flex-basis: 275px;
+        align-items: center;
+    }
+
+    .skip + header {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+
+    }
+    
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+      /* Stop the animation */
+      animation: none;
+    }
+}
+/* 
+  swap out with media print at the end
+ */ 
+
+ /* @media print */
+
+ @media  print { 
+     body {
+         font-family: Arial, Helvetica;
+         background-image: none;
+     }
+
+     header {
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 8em;
+
+    } 
+     
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end; 
+    }
+    
+    .card {
+        flex-basis: 325px;
+        border: 2px solid #45addd;
+        align-content: center;
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card li:nth-child(2)::after {
+        content: "👍";
+      }
+
+}
