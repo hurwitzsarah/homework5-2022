@@ -4,13 +4,13 @@
     100% {width: 475px; opacity: 1;}
     }
 
-/* mobile view */
+/*apply animation to logo */
 #logo {
   animation-name: grow;
   animation-duration: 5s;
   animation-iteration-count: 1;
 }
-
+/*mobile view*/
 body {
     font-family: 'Poppins', 'serif';
     background: #f1f1f1 url(../images/concrete_seamless.png)
